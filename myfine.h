@@ -6,15 +6,17 @@
  ************************************************************************/
 #ifndef __HEADER__
 #define __HEADER__
+
 #include<iostream>
-#include<stdio.h>
-#include<stdint.h>
-#include <string.h>
+#include<cstdio>
+#include<cstdint>
+#include <cstring>
+
 #define KB 10
 #define byte unsigned char
 //#define DEBUG //debug only
 
-#define ERRPRINT(format,...) printf("File: "__FILE__", Line: %05d: "format"\n", __LINE__, ##__VA_ARGS__)
+#define ERRPRINT(format, ...) printf("File: ", __FILE__, " Line: %05d: ", format ,"\n" , __LINE__ , ##__VA_ARGS__)
 #define NOWN     0X000000000000000F
 #define DELF     0X0000000000000020
 #define MINF     0X0000000000000010
@@ -23,7 +25,7 @@
 #define LSN_HIGH 0X00000000FFFFFFFF
 #define HEAP_N   0X0000000000007FFF
 
-typedef uint64_t	ulint;
+typedef uint64_t ulint;
 typedef uint64_t ib_uint64_t;
 
 #endif
